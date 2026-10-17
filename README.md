@@ -319,9 +319,9 @@ For WSL2 users, it is recommended to store the project inside the Linux filesyst
 
 ## Author
 
-**Tran Le Quoc Anh - 24ITB014**
-**Ho Nhat Khanh - 24ITB074**
-**H' Me Ly Nie - 24ITB144**
+**Tran Le Quoc Anh - 24ITB014**  
+**Ho Nhat Khanh - 24ITB074**  
+**H' Me Ly Nie - 24ITB144**  
 
 Information Technology Student  
 Vietnam–Korea University of Information and Communication Technology (VKU)
