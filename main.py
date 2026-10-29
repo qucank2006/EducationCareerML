@@ -6,6 +6,8 @@ from src.data_loader import load_data
 from src.preprocessing import prepare_data
 from src.train import train_models
 from src.evaluate import evaluate_models
+from src.eda import generate_eda
+from src.feature_importance import plot_feature_importance
 
 def main():
     print("=== EDUCATION CAREER ML ===")
@@ -13,7 +15,7 @@ def main():
     # Load dataset
     df = load_data()
 
-    # Preprocessing
+    # Exploratory data analysis\n    generate_eda(df)\n\n    # Preprocessing
     (
         X_train, X_test,
         y_train, y_test,
@@ -35,7 +37,7 @@ def main():
 
     # Save best model
     best_name = results.iloc[0]["Model"]
-    best_model = models[best_name]
+    best_model = models[best_name]\n\n    # Explain which input features are useful for the selected model\n    plot_feature_importance(\n        best_model, X_test, y_test, model_name=best_name\n    )
 
     model_dir = Path("models")
     model_dir.mkdir(exist_ok=True)
