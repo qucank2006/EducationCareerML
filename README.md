@@ -47,7 +47,14 @@ EducationCareerML/
 │   ├── model_comparison.csv
 │   ├── mae_comparison.png
 │   ├── rmse_comparison.png
-│   └── r2_comparison.png
+│   ├── r2_comparison.png
+│   ├── starting_salary_distribution.png
+│   ├── salary_by_field_of_study.png
+│   ├── salary_by_field_of_study.csv
+│   ├── correlation_matrix.png
+│   ├── correlation_matrix.csv
+│   ├── feature_importance.png
+│   └── feature_importance.csv
 │
 ├── src/
 │   ├── __init__.py
