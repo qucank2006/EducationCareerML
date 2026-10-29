@@ -9,7 +9,7 @@ from sklearn.inspection import permutation_importance
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 
 
-def plot_feature_importance(model, X_test, y_test):
+def plot_feature_importance(model, X_test, y_test, model_name="Best Model"):
     """
     Estimate feature importance by shuffling each original input column
     on the held-out test set. Larger importance means shuffling that column
@@ -47,7 +47,7 @@ def plot_feature_importance(model, X_test, y_test):
         capsize=3,
     )
     plt.axvline(0, linewidth=1)
-    plt.title("Feature Importance (Permutation Importance - Random Forest)")
+    plt.title(f"Feature Importance (Permutation Importance - {model_name})")
     plt.xlabel("Increase in MAE after shuffling (higher = more important)")
     plt.ylabel("Input feature")
     plt.tight_layout()
