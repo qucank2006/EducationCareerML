@@ -47,14 +47,7 @@ EducationCareerML/
 │   ├── model_comparison.csv
 │   ├── mae_comparison.png
 │   ├── rmse_comparison.png
-│   ├── r2_comparison.png
-│   ├── starting_salary_distribution.png
-│   ├── salary_by_field_of_study.png
-│   ├── salary_by_field_of_study.csv
-│   ├── correlation_matrix.png
-│   ├── correlation_matrix.csv
-│   ├── feature_importance.png
-│   └── feature_importance.csv
+│   └── r2_comparison.png
 │
 ├── src/
 │   ├── __init__.py
@@ -379,32 +372,6 @@ Các biểu đồ được lưu trong thư mục `results/`:
 
 Các biểu đồ hỗ trợ việc phân tích Experimental Results và xác định sự khác biệt về hiệu suất dự đoán giữa các thuật toán.
 
-
-### 10.1. Exploratory Data Analysis (EDA)
-
-Chương trình tạo thêm các kết quả phân tích dữ liệu từ những cột thực sự có trong Dataset:
-
-| File | Nội dung |
-|---|---|
-| `starting_salary_distribution.png` | Histogram phân bố mức lương khởi điểm |
-| `salary_by_field_of_study.png` | So sánh lương trung bình theo ngành học (tối đa 15 ngành để biểu đồ dễ đọc) |
-| `salary_by_field_of_study.csv` | Số lượng mẫu, lương trung bình và trung vị theo từng ngành |
-| `correlation_matrix.png` | Heatmap tương quan giữa các cột dạng số |
-| `correlation_matrix.csv` | Các hệ số tương quan dạng bảng |
-
-Biểu đồ tương quan chỉ xét các cột số. Hệ số tương quan thể hiện mối liên hệ tuyến tính, không chứng minh quan hệ nhân quả. Ngành học là biến phân loại nên được so sánh riêng với mức lương thay vì gán mã số tùy ý để tính tương quan.
-
-### 10.2. Feature Importance
-
-Sau khi đánh giá các mô hình, chương trình tính **Permutation Importance** cho mô hình có MAE thấp nhất trên Testing Set. Mỗi đặc trưng đầu vào được xáo trộn nhiều lần; mức tăng MAE trung bình cho biết mô hình phụ thuộc vào đặc trưng đó đến mức nào.
-
-| File | Nội dung |
-|---|---|
-| `feature_importance.png` | Biểu đồ xếp hạng đặc trưng theo mức tăng MAE |
-| `feature_importance.csv` | Giá trị trung bình và độ lệch chuẩn của mức tăng MAE |
-
-Giá trị lớn hơn thường biểu thị đặc trưng hữu ích hơn cho dự đoán của mô hình đã chọn. Giá trị âm có thể xuất hiện. Đây là mức độ hữu ích đối với mô hình, không phải bằng chứng rằng đặc trưng gây ra mức lương cao hoặc thấp. Các đặc trưng tương quan với nhau cũng có thể chia sẻ mức độ quan trọng.
-
 ## 11. Model Saving
 
 Sau quá trình Training và Model Evaluation, Best Model được lưu bằng Joblib tại:
@@ -443,7 +410,7 @@ Trong tương lai, dự án có thể được mở rộng theo các hướng:
 - Áp dụng **Cross-validation** để đánh giá khả năng Generalization.
 - Thực hiện **Hyperparameter Tuning** bằng GridSearchCV hoặc RandomizedSearchCV.
 - Thử nghiệm thêm các thuật toán Regression khác.
-- Mở rộng phân tích **Feature Importance** bằng các phương pháp giải thích mô hình như SHAP và kiểm tra tính ổn định qua Cross-validation.
+- Phân tích **Feature Importance** để xác định mức độ ảnh hưởng của từng Feature.
 - Xây dựng Web Application cho phép người dùng nhập thông tin và dự đoán Starting Salary.
 - Đánh giá mô hình trên các Dataset độc lập.
 - Nâng cao **Model Interpretability** và kiểm tra tính công bằng của mô hình.
